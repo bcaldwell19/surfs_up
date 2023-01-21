@@ -6,8 +6,11 @@
 >He's extremely serious about this. He invested in a surf shop early in his career. However, he didn't ask for any weather analysis and that early venture was rained out of existence. W. Avy knows you've been learning how to properly analyze data and asks if you can run some analytics on a weather data set he has from the very island where you'd like to open your shop, the beautiful Awahoo.
 
 Language:Python
+
 Database:SQLite
+
 Libraries:Pandas,SQLAlchemy
+
 IDE: Jupyter Notebook
 
 _________________________________________________________________________________
@@ -43,17 +46,19 @@ Additional Queries:
 
 1. The weather database also has precipataion data as well. It would be good to run that anlaysis as well.  The temperature could be good, but rain could ruin the chances of any sales that day.
 
-    *results_3=session.query(Measurement.prcp ).\
+    results_3=session.query(Measurement.prcp ).\
     filter(func.strftime("%m", Measurement.date) == "6").all()
-    *results_4=session.query(Measurement.prcp ).\
+    
+    results_4=session.query(Measurement.prcp ).\
     filter(func.strftime("%m", Measurement.date) == "12").all()
 
 2. In the same vain, it could also be useful to filter the data by the closest weather station(s) to the future location of the shop to understand temperature and precipataion as well.
 
-    *results_5=session.query(Measurement.tobs,Measurement.station).\
+    results_5=session.query(Measurement.tobs,Measurement.station).\
     filter(Measurement.station == 'local station(s)').\
     filter(func.strftime("%m", Measurement.date) == "6").all()
-    *results_6=session.query(Measurement.tobs,Measurement.station).\
+    
+    results_6=session.query(Measurement.tobs,Measurement.station).\
     filter(Measurement.station == 'local station(s)').\
     filter(func.strftime("%m", Measurement.date) == "12").all()
 
