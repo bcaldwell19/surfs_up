@@ -25,9 +25,9 @@ The investor had previously backed a surf shop, but didn't ask for this requirem
 ## 2)Results: 
 ### Provide a bulleted list with three major points from the two analysis deliverables. Use images as support where needed.
 
-1. The average temperature is rather similar when you compare June to December.  This is good news for our investor;because, based on historical data, there should not be a significant drop in sales in the winter months based purely on temperature.
-2. The minimum temperature in December is in the 50s compared to the 60s in June.  This could be a concern to our investor as customers may be less likely to want to surf and purchase ice cream in cooler weather. 
-3. The standard deviations are similar as well.  There is more variability in the temperature in December than June.  This would make sense as the earth's orbit around the sun affects temperatures.
+* The average temperature is rather similar when you compare June to December.  This is good news for our investor;because, based on historical data, there should not be a significant drop in sales in the winter months based purely on temperature.
+* The minimum temperature in December is in the 50s compared to the 60s in June.  This could be a concern to our investor as customers may be less likely to want to surf and purchase ice cream in cooler weather. 
+* The standard deviations are similar as well.  There is more variability in the temperature in December than June.  This would make sense as the earth's orbit around the sun affects temperatures.
 
 Figure 1: 
 
@@ -48,18 +48,13 @@ Additional Queries:
 
     results_3=session.query(Measurement.prcp ).\
     filter(func.strftime("%m", Measurement.date) == "6").all()
-    
     results_4=session.query(Measurement.prcp ).\
     filter(func.strftime("%m", Measurement.date) == "12").all()
 
 2. In the same vain, it could also be useful to filter the data by the closest weather station(s) to the future location of the shop to understand temperature and precipataion as well.
 
-    results_5=session.query(Measurement.tobs,Measurement.station).\
-    filter(Measurement.station == 'local station(s)').\
-    filter(func.strftime("%m", Measurement.date) == "6").all()
+    'results_5=session.query(Measurement.tobs,Measurement.station).filter(Measurement.station == 'local station(s)').filter(func.strftime("%m", Measurement.date) ==    "6").all()
     
-    results_6=session.query(Measurement.tobs,Measurement.station).\
-    filter(Measurement.station == 'local station(s)').\
-    filter(func.strftime("%m", Measurement.date) == "12").all()
+    results_6=session.query(Measurement.tobs,Measurement.station).filter(Measurement.station == 'local station(s)').filter(func.strftime("%m", Measurement.date) == "12").all()
 
 
