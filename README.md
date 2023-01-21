@@ -31,7 +31,7 @@ The investor had previously backed a surf shop, but didn't ask for this requirem
 
 Figure 1: 
 
-![June](/Images/June_temp.png)
+![June](/Images/June_temperature.png)
 
 Figure 2: 
 
